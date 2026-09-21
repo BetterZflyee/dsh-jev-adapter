@@ -1,0 +1,21 @@
+# dsh-jev-adapter — default plugin entry
+# Registers the jev_decide tool on DeepSeek Harness.
+# All settings are optional; see README for the full list.
+- insert:
+    - id: dsh-jev-adapter
+      name: dsh-jev-adapter
+      config:
+        # Channel: "openai" (default) or "typesafe"
+        channel: openai
+        # ---- openai channel (any OpenAI-compatible endpoint) ----
+        # All three fall back to env vars, then to these defaults.
+        # baseURL: https://api.deepseek.com/v1
+        # apiKey: (env JEV_OPENAI_API_KEY, or OPENAI_API_KEY)
+        # model: deepseek-chat
+        # ---- typesafe channel (real Jev, needs a key) ----
+        # apiKey: (env JEV_TYPESAFE_API_KEY, or TYPESAFE_API_KEY)
+        # model: jev-latest
+        # ---- shared ----
+        maxTokens: 4000
+        timeoutMs: 120000
+        retries: 3

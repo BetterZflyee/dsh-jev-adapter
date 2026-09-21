@@ -1,0 +1,10 @@
+{
+  "steps": [
+    {
+      "step": "decode",
+      "name": "Decode",
+      "command": "node -e \"import('./lib/adapter.js').then(()=>import('./lib/tool.js')).then(()=>import('./lib/index.js')).then(()=>console.log('all modules load')).catch(e=>{console.error(e.message);process.exit(1)})\"",
+      "onFail": "stop"
+    }
+  ]
+}
